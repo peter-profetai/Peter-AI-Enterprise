@@ -1,0 +1,5 @@
+{
+  "name": "Enterprise AI Suite Portal-V2",
+  "description": "A unified portal managing access and global settings for three core AI products: AI Studio, AILM, and AutoML.",
+  "requestFramePermissions": []
+}

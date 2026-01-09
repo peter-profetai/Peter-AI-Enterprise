@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Enterprise AI Suite</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class', // Enable manual dark mode toggling
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'Microsoft JhengHei', 'sans-serif'],
+              mono: ['Fira Code', 'Consolas', 'monospace'],
+            },
+            colors: {
+              // Brand Core
+              primary: {
+                DEFAULT: '#28AAA0', // Teal
+                dark: '#1f8e83',    // Hover
+                light: '#EAF6F5',   // Selected/Background
+                glow: 'rgba(40, 170, 160, 0.2)', // Dark Mode Glow
+                textLink: '#4DB6AC', // Dark Mode Link
+              },
+              // Dark Mode Surfaces (V9 Spec)
+              surface: {
+                base: '#121212', // Body Background
+                1: '#1E1E1E',    // Sidebar, Card
+                2: '#2D2D2D',    // Modal, Dropdown
+                3: '#383838',    // Input, Hover
+              },
+              // Dark Mode Typography (V9 Spec)
+              text: {
+                high: 'rgba(255, 255, 255, 0.87)',
+                medium: 'rgba(255, 255, 255, 0.60)',
+                disable: 'rgba(255, 255, 255, 0.38)',
+              },
+              // Functional (Adaptive)
+              success: { DEFAULT: '#28a745', bg: '#d4edda', text: '#155724', dark: '#69F0AE', darkBg: 'rgba(105, 240, 174, 0.15)', darkText: '#69F0AE' },
+              warning: { DEFAULT: '#ffc107', bg: '#fff3cd', text: '#856404', dark: '#FFE57F', darkBg: 'rgba(255, 229, 127, 0.15)', darkText: '#FFE57F' },
+              error:   { DEFAULT: '#dc3545', bg: '#f8d7da', text: '#721c24', dark: '#FF8A80', darkBg: 'rgba(255, 138, 128, 0.15)', darkText: '#FF8A80' },
+              info:    { DEFAULT: '#17a2b8', bg: '#cce5ff', text: '#004085', dark: '#80DEEA', darkBg: 'rgba(128, 222, 234, 0.15)', darkText: '#80DEEA' },
+              
+              // Product Specific (Legacy support or accenting)
+              studio: { 600: '#28AAA0', 50: '#EAF6F5' }, 
+              ailm:   { 600: '#28AAA0', 50: '#EAF6F5' },
+              automl: { 
+                900: '#1A1A1A', 
+                accent: '#28AAA0' 
+              },
+              
+              // Neon Palette for Dark Mode DataViz
+              neon: {
+                1: '#28AAA0', // Teal Neon
+                2: '#00E5FF', // Cyan Neon
+                3: '#D500F9', // Purple Neon
+                4: '#FF9100'  // Orange Neon
+              }
+            },
+            borderColor: {
+              DEFAULT: '#e5e7eb',
+              dark: '#333333',       // Standard dark border (Surface L1/L2)
+              'dark-light': '#444444', // Input border
+            },
+            boxShadow: {
+              'l1': '0 4px 12px rgba(0, 0, 0, 0.08)', 
+              'l2': '0 8px 24px rgba(0, 0, 0, 0.12)', 
+              'l3': '0 12px 32px rgba(0, 0, 0, 0.16)', 
+              'dark-l2': '0 8px 24px rgba(0, 0, 0, 0.5)', // Dark Modal Shadow
+              'glow': '0 0 0 4px rgba(40, 170, 160, 0.25)', // Focus Glow
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&display=swap');
+      
+      body {
+        font-family: 'Inter', sans-serif;
+      }
+      
+      /* Tabular Nums for Data Tables */
+      .tabular-nums {
+        font-variant-numeric: tabular-nums;
+      }
+
+      /* Custom scrollbar */
+      ::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: transparent;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #cbd5e1;
+        border-radius: 4px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #94a3b8;
+      }
+      
+      /* Dark mode scrollbar */
+      .dark ::-webkit-scrollbar-track {
+        background: #121212;
+      }
+      .dark ::-webkit-scrollbar-thumb {
+        background: #444444;
+      }
+      .dark ::-webkit-scrollbar-thumb:hover {
+        background: #666666;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.2.3",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "lucide-react": "https://esm.sh/lucide-react@^0.562.0",
+    "react-router-dom": "https://esm.sh/react-router-dom@^7.12.0",
+    "recharts": "https://esm.sh/recharts@^3.6.0"
+  }
+}
+</script>
+</head>
+  <body class="bg-[#F8F9FA] dark:bg-surface-base text-[#333333] dark:text-text-high antialiased h-screen overflow-hidden transition-colors duration-200">
+    <div id="root" class="h-full"></div>
+  </body>
+</html>
